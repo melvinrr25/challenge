@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-container:before,
+.nav-container:after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+.nav-container {
+  display: block;
+  padding: 5px 15px;
+  background:linear-gradient(#111,#222, #111);
+}
+
+.nav-container .logo {
+  float: left;
+  margin-top: 10px;
+  margin-left: 0px;
+}
+
+.nav-container .logo a {
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #3f9ed0;
+  font-family: "segoe ui";
+  text-shadow: 1px 1px 2px #000;
+}
+
+.nav-container .logo a:hover {
+  color: #fff;
+}
+
+.nav-container .nav-bar {
+  float: left;
+  margin-left: 20px;
+}
+
+.nav-container .nav-bar ul {}
+
+.nav-container .nav-bar ul li {
+  display: inline-block;
+}
+
+.nav-container .nav-bar ul li a {
+  color: #ddd;
+  display: block;
+  padding: 15px 20px;
+  transition:.5s;
+  text-decoration: none;
+  font-family: "segoe ui";
+  border-radius: 10px;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+}
+
+.nav-container .nav-bar ul li a:hover {
+  color: #d3c630;
+  border-bottom: 1px solid #888;
+/*  border-top: 1px solid white;*/
+  background: #191818;
+}
+
+.nav-container .btn-nav-bar {
+  float: right;
+  display: none;
+  cursor: pointer;
+  border: 1px solid white;
+  border-radius: 3px;
+  padding: 3px;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.nav-container .btn-nav-bar span {
+  border: 1px solid #ccc;
+  margin: 5px;
+  display: block;
+  width: 20px;
+}
+
+@media screen and (max-width:850px) {
+  .nav-container {
+    height: 60px;
+  }
+  .nav-container .btn-nav-bar {
+    display: block;
+  }
+  .nav-container .logo {
+    margin-left: 18px;
+  }
+  .nav-container .nav-bar {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    left: -150%;
+    overflow: hidden;
+    top: 60px;
+    margin-left: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.90);
+    padding: 5px 0;
+  }
+  .nav-container .nav-bar ul li {
+    display: block;
+    text-align: center;
+  }
+  .nav-container .nav-bar ul li a {
+    border-radius: 0px;
+    border:none;
+    background: rgba(0, 0, 0, 0.50);
+  }
+  .nav-container .nav-bar ul li a:hover {
+    background: rgba(50, 51, 44, 0.5);
+    border:none;
+  }
+  
+}

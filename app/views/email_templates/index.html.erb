@@ -1,0 +1,26 @@
+<%= link_to "Back", dashboard_path, class: "back" %>
+<div style="text-align:center">
+<%= link_to "+ Create a new template", new_email_template_path, class: "new-template"  %>
+</div>
+
+<div class="m-panel">
+  <div class="m-panel-header">
+    <h3>My Templates</h3>    
+  </div>
+  <div class="m-panel-content">
+    <div class="search">
+      <input id="search-template" type="text" placeholder="Write the template name...">
+    </div>
+    
+    <% @email_template.each do |template| %>
+    <div class="template-container">
+      <h3><%= template.name %></h3>
+      <%= link_to "Create email", email_new_path(template: template.id), class: "create_email" %>
+      <%= link_to "View", email_template_path(template), class: "see" %>
+      <%= link_to "Delete", template, class: "delete", method: :delete %>
+      <%= link_to "Edit", edit_email_template_path(template), class: "edit" %>
+    </div>
+    
+    <% end %>
+  </div>
+</div>

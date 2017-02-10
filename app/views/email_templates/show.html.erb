@@ -1,0 +1,17 @@
+<%= link_to "Back", email_templates_path, class: "back" %>
+
+<div class="m-panel">
+  <div class="m-panel-header">
+    <h3><%= @email_template.name %></h3>
+  </div>
+  <div class="m-panel-content">
+    <div class="template-container" style="text-align:left!important; color:#ccc">
+      <p><b>Subject:</b> <%= @email_template.subject %></p><br>
+      <p><b>Body:</b> <%= @email_template.body %></p>
+      <div style="text-align:right">
+        <%= link_to "Edit", edit_email_template_path(@email_template), class: "edit" %>
+        <%= link_to "Delete", @email_template, class: "delete", method: :delete %>
+      </div>
+    </div>
+  </div>
+</div>

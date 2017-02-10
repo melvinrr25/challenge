@@ -1,0 +1,16 @@
+
+<div class="m-panel">
+
+  <div class="m-panel-header">
+    <h3>Dashboard</h3>
+  </div>
+  <div class="m-panel-content">
+    <div class="lateral-menu">
+      <ul>
+        <li><%= link_to "My templates", email_templates_path %></li>  
+        <li><%= link_to "Edit or cancel my user account", edit_user_registration_path %></li>
+        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %> </li>  
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<%= link_to "Back", email_templates_path, class: "back" %>
+
+<div class="m-panel">
+  <div class="m-panel-header"><h3>New email</h3></div>
+  <div class="m-panel-content">
+
+    <%= form_tag create_email_path , multipart: true, onsubmit: "spinner()" do %>
+
+    <label>Email to</label>
+    <%= email_field_tag 'to', '', autofocus: true, required: true, multiple: true %>
+
+    <label>Email subject</label>
+    <%= text_field_tag 'subject', @template.subject, required: true %>
+    
+    <label>Email file (<i>CSV files are allowed</i>)</label>
+    <%= file_field_tag 'file' %>
+
+    <label>Email body</label>
+    <%= text_area_tag 'body', @template.body, rows: 8, required: true %>
+    
+    <%= submit_tag "submit",:value => "Send email" %>
+     
+     
+    <div class="spinner-content">Sending email...
+      <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+      </div>
+    </div>
+      
+    <%end%>
+
+  </div>
+</div>
+
+<script>
+  function spinner(){
+    $(".spinner-content").css("display","block");
+  }
+</script>
+
+
